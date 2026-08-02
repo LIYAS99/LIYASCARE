@@ -1,0 +1,1137 @@
+/* ===================================
+   LIYAS CARE
+   Premium Theme V1
+=================================== */
+
+:root{
+
+--black:#121212;
+--black2:#1b1b1b;
+
+--white:#ffffff;
+
+--orange:#ff7a00;
+
+--green:#0e8a4b;
+
+--gold:#d4af37;
+
+--gray:#d9d9d9;
+
+--radius:18px;
+
+--shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:var(--black);
+
+color:var(--white);
+
+overflow-x:hidden;
+
+}
+
+a{
+text-decoration:none;
+color:white;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+/* =======================
+HEADER
+======================= */
+
+header{
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 8%;
+
+background:rgba(18,18,18,.92);
+
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo h2{
+
+font-size:34px;
+
+color:var(--gold);
+
+font-weight:800;
+
+letter-spacing:2px;
+
+}
+
+.logo p{
+
+font-size:12px;
+
+opacity:.8;
+
+}
+
+nav{
+
+display:flex;
+
+gap:30px;
+
+}
+
+nav a{
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:var(--orange);
+
+}
+
+/* =======================
+BUTTON
+======================= */
+
+.btn{
+
+display:inline-block;
+
+padding:14px 30px;
+
+border-radius:40px;
+
+background:#2a2a2a;
+
+margin-right:15px;
+
+transition:.3s;
+
+font-weight:600;
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.btn-orange{
+
+background:var(--orange);
+
+color:white;
+
+}
+
+/* =======================
+HERO
+======================= */
+
+.hero{
+
+min-height:90vh;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:80px 8%;
+
+gap:60px;
+
+background:
+
+linear-gradient(135deg,#121212,#1f1f1f);
+
+}
+
+.hero-text{
+
+flex:1;
+
+}
+
+.hero-text h1{
+
+font-size:58px;
+
+line-height:1.2;
+
+margin-bottom:20px;
+
+}
+
+.hero-text p{
+
+font-size:20px;
+
+color:#dddddd;
+
+margin-bottom:40px;
+
+}
+
+.hero-image{
+
+flex:1;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.hero-image img{
+
+max-width:500px;
+
+filter:drop-shadow(0 30px 40px rgba(0,0,0,.5));
+
+animation:float 5s ease infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* =======================
+PRODUCTS
+======================= */
+
+.products{
+
+padding:100px 8%;
+
+text-align:center;
+
+}
+
+.products h2{
+
+font-size:42px;
+
+margin-bottom:60px;
+
+color:var(--gold);
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:var(--radius);
+
+padding:40px 25px;
+
+backdrop-filter:blur(12px);
+
+transition:.35s;
+
+box-shadow:var(--shadow);
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+
+border-color:var(--orange);
+
+box-shadow:0 20px 50px rgba(255,122,0,.25);
+
+}
+
+.card i{
+
+font-size:55px;
+
+color:var(--orange);
+
+margin-bottom:25px;
+
+}
+
+.card h3{
+
+font-size:26px;
+
+margin-bottom:15px;
+
+font-weight:700;
+
+}
+
+.card p{
+
+color:#d0d0d0;
+
+line-height:1.8;
+
+font-size:16px;
+
+}
+
+/* =======================
+WHY CHOOSE LIYAS
+======================= */
+
+.why{
+
+padding:100px 8%;
+
+background:#181818;
+
+text-align:center;
+
+}
+
+.why h2{
+
+font-size:42px;
+
+margin-bottom:60px;
+
+color:var(--gold);
+
+}
+
+.why .card{
+
+background:#202020;
+
+}
+
+.why .card i{
+
+font-size:50px;
+
+color:var(--green);
+
+}
+
+.why .card h3{
+
+font-size:22px;
+
+margin-top:15px;
+
+}
+
+/* =======================
+SECTION TITLE
+======================= */
+
+section h2{
+
+letter-spacing:1px;
+
+font-weight:700;
+
+}
+
+section{
+
+scroll-margin-top:100px;
+
+}
+
+
+/* =======================
+WARRANTY SECTION
+======================= */
+
+.warranty{
+
+padding:100px 8%;
+
+text-align:center;
+
+background:linear-gradient(135deg,#171717,#242424);
+
+}
+
+.warranty h2{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+color:var(--gold);
+
+}
+
+.warranty p{
+
+max-width:700px;
+
+margin:0 auto 40px;
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#d5d5d5;
+
+}
+
+.warranty .btn{
+
+background:linear-gradient(135deg,#ff7a00,#ff9a1f);
+
+color:#fff;
+
+padding:16px 40px;
+
+font-size:18px;
+
+box-shadow:0 15px 35px rgba(255,122,0,.35);
+
+}
+
+.warranty .btn:hover{
+
+transform:translateY(-5px) scale(1.03);
+
+}
+
+/* =======================
+DEALER SECTION
+======================= */
+
+.dealer{
+
+padding:100px 8%;
+
+text-align:center;
+
+background:#141414;
+
+}
+
+.dealer h2{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+color:var(--gold);
+
+}
+
+.dealer p{
+
+max-width:650px;
+
+margin:0 auto 40px;
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#d8d8d8;
+
+}
+
+.dealer .btn{
+
+background:transparent;
+
+border:2px solid var(--orange);
+
+padding:15px 38px;
+
+}
+
+.dealer .btn:hover{
+
+background:var(--orange);
+
+}
+
+/* =======================
+CONTACT
+======================= */
+
+.contact{
+
+padding:100px 8%;
+
+text-align:center;
+
+background:#1a1a1a;
+
+}
+
+.contact h2{
+
+font-size:40px;
+
+margin-bottom:30px;
+
+color:var(--gold);
+
+}
+
+.contact p{
+
+font-size:18px;
+
+margin:12px 0;
+
+color:#dddddd;
+
+}
+
+.contact p:hover{
+
+color:var(--orange);
+
+transition:.3s;
+
+}
+
+/* =======================
+COMMON SPACING
+======================= */
+
+.products,
+.why,
+.warranty,
+.dealer,
+.contact{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* Decorative Top Border */
+
+.products::before,
+.why::before,
+.warranty::before,
+.dealer::before,
+.contact::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:120px;
+
+height:4px;
+
+background:linear-gradient(to right,
+var(--orange),
+var(--gold),
+var(--green));
+
+border-radius:50px;
+
+}
+
+/* =======================
+FOOTER
+======================= */
+
+footer{
+
+padding:60px 8% 30px;
+
+background:#0d0d0d;
+
+text-align:center;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+footer h3{
+
+font-size:32px;
+
+color:var(--gold);
+
+margin-bottom:15px;
+
+font-weight:700;
+
+}
+
+footer p{
+
+color:#bdbdbd;
+
+font-size:15px;
+
+line-height:1.8;
+
+margin:8px 0;
+
+}
+
+footer a{
+
+color:#bdbdbd;
+
+transition:.3s;
+
+}
+
+footer a:hover{
+
+color:var(--orange);
+
+}
+
+/* =======================
+SCROLL TO TOP
+======================= */
+
+#topBtn{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+width:52px;
+
+height:52px;
+
+border:none;
+
+outline:none;
+
+border-radius:50%;
+
+background:var(--orange);
+
+color:#fff;
+
+font-size:20px;
+
+cursor:pointer;
+
+display:none;
+
+z-index:999;
+
+box-shadow:0 12px 30px rgba(255,122,0,.35);
+
+transition:.3s;
+
+}
+
+#topBtn:hover{
+
+transform:translateY(-5px);
+
+background:var(--gold);
+
+}
+
+/* =======================
+SCROLLBAR
+======================= */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--orange);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:var(--gold);
+
+}
+
+/* =======================
+SELECTION
+======================= */
+
+::selection{
+
+background:var(--orange);
+
+color:white;
+
+}
+
+/* =======================
+SMOOTH FADE
+======================= */
+
+.hero,
+.products,
+.why,
+.warranty,
+.dealer,
+.contact,
+footer{
+
+animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* =======================
+IMAGE HOVER
+======================= */
+
+.hero-image img{
+
+transition:.5s;
+
+}
+
+.hero-image img:hover{
+
+transform:scale(1.05);
+
+}
+
+/* =======================
+CARD SHINE EFFECT
+======================= */
+
+.card{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.card::after{
+
+content:"";
+
+position:absolute;
+
+top:-120%;
+
+left:-60%;
+
+width:40%;
+
+height:250%;
+
+background:rgba(255,255,255,.08);
+
+transform:rotate(25deg);
+
+transition:.8s;
+
+}
+
+.card:hover::after{
+
+left:130%;
+
+}
+
+/* =======================
+SECTION SPACING
+======================= */
+
+section{
+
+padding-top:90px;
+
+padding-bottom:90px;
+
+}
+
+/* =======================
+END
+======================= */
+
+/* ===================================
+   RESPONSIVE DESIGN
+=================================== */
+
+/* Laptop */
+
+@media(max-width:1200px){
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+.hero-image img{
+
+max-width:420px;
+
+}
+
+}
+
+
+/* Tablet */
+
+@media(max-width:992px){
+
+header{
+
+padding:18px 5%;
+
+}
+
+.hero{
+
+flex-direction:column-reverse;
+
+text-align:center;
+
+padding:70px 5%;
+
+}
+
+.hero-text h1{
+
+font-size:42px;
+
+}
+
+.hero-text p{
+
+font-size:18px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+}
+
+.hero-image img{
+
+max-width:380px;
+
+}
+
+.cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+header{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+nav{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+.logo{
+
+text-align:center;
+
+}
+
+.hero{
+
+padding:60px 20px;
+
+}
+
+.hero-text h1{
+
+font-size:34px;
+
+}
+
+.hero-text p{
+
+font-size:17px;
+
+}
+
+.btn{
+
+display:block;
+
+width:100%;
+
+margin:10px 0;
+
+text-align:center;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.products h2,
+.why h2,
+.warranty h2,
+.dealer h2,
+.contact h2{
+
+font-size:32px;
+
+}
+
+footer h3{
+
+font-size:26px;
+
+}
+
+}
+
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+.hero{
+
+padding:50px 18px;
+
+}
+
+.hero-text h1{
+
+font-size:28px;
+
+line-height:1.4;
+
+}
+
+.hero-text p{
+
+font-size:16px;
+
+}
+
+.hero-image img{
+
+max-width:260px;
+
+}
+
+.logo h2{
+
+font-size:28px;
+
+}
+
+.logo p{
+
+font-size:11px;
+
+}
+
+nav{
+
+font-size:14px;
+
+gap:10px;
+
+}
+
+.card{
+
+padding:28px 18px;
+
+}
+
+.card h3{
+
+font-size:22px;
+
+}
+
+.card p{
+
+font-size:15px;
+
+}
+
+.products,
+.why,
+.warranty,
+.dealer,
+.contact{
+
+padding:70px 20px;
+
+}
+
+footer{
+
+padding:50px 20px;
+
+}
+
+}
+
+
+/* Ultra Small */
+
+@media(max-width:360px){
+
+.hero-text h1{
+
+font-size:24px;
+
+}
+
+.btn{
+
+padding:13px 20px;
+
+font-size:15px;
+
+}
+
+.logo h2{
+
+font-size:24px;
+
+}
+
+}
