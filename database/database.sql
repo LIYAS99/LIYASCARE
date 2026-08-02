@@ -1,39 +1,38 @@
 /*
 =========================================================
 LIYAS Electronics
-Database Structure
+LIYAS Care Database
 
-File:
-database.sql
+Production Database
+Supabase PostgreSQL
 
-Part 1
+Version: 1.0
 
 Tables:
 - products
 - dealers
-- warranties (base)
+- warranties
+- admins
+- support_tickets
+- service_history
+- warranty_events
 
-Database:
-Supabase PostgreSQL
 =========================================================
 */
 
 
 /*
 =========================================================
-UUID EXTENSION
+EXTENSIONS
 =========================================================
 */
 
 create extension if not exists "uuid-ossp";
 
 
-
 /*
 =========================================================
 PRODUCTS TABLE
-
-Stores LIYAS products
 =========================================================
 */
 
@@ -43,7 +42,7 @@ create table if not exists products (
 
     product_code varchar(50) unique not null,
 
-    product_name varchar(100) not null,
+    product_name varchar(150) not null,
 
     category varchar(100),
 
@@ -55,9 +54,11 @@ create table if not exists products (
 
     image_url text,
 
-    status varchar(20) default 'ACTIVE',
+    status varchar(20)
+    default 'ACTIVE',
 
-    created_at timestamp default now()
+    created_at timestamp
+    default now()
 
 );
 
@@ -66,8 +67,6 @@ create table if not exists products (
 /*
 =========================================================
 DEALERS TABLE
-
-Authorized Dealer Network
 =========================================================
 */
 
@@ -75,11 +74,13 @@ create table if not exists dealers (
 
     id uuid primary key default uuid_generate_v4(),
 
-    user_id uuid,
+    user_id uuid unique,
 
-    dealer_code varchar(50) unique not null,
+    dealer_code varchar(50)
+    unique not null,
 
-    dealer_name varchar(150) not null,
+    dealer_name varchar(150)
+    not null,
 
     owner_name varchar(100),
 
@@ -97,9 +98,11 @@ create table if not exists dealers (
 
     gst_number varchar(20),
 
-    status varchar(20) default 'ACTIVE',
+    status varchar(20)
+    default 'ACTIVE',
 
-    created_at timestamp default now()
+    created_at timestamp
+    default now()
 
 );
 
@@ -107,10 +110,7 @@ create table if not exists dealers (
 
 /*
 =========================================================
-WARRANTY TABLE
-
-Customer Warranty Registration
-
+WARRANTIES TABLE
 =========================================================
 */
 
@@ -118,48 +118,40 @@ create table if not exists warranties (
 
     id uuid primary key default uuid_generate_v4(),
 
+    customer_name varchar(150)
+    not null,
 
-    customer_name varchar(150) not null,
-
-
-    mobile varchar(15) not null,
-
+    mobile varchar(15)
+    not null,
 
     email varchar(150),
 
-
-    serial_number varchar(50) unique not null,
-
-
-    product_name varchar(100),
-
+    serial_number varchar(50)
+    unique not null,
 
     product_code varchar(50),
 
-
-    dealer_name varchar(150),
-
+    product_name varchar(150),
 
     dealer_id uuid,
 
+    dealer_name varchar(150),
 
     invoice_number varchar(100),
 
-
     purchase_date date,
 
+    warranty_months integer
+    default 12,
 
-    registration_date timestamp default now(),
+    status varchar(30)
+    default 'ACTIVE',
 
+    registration_date timestamp
+    default now(),
 
-    warranty_months integer default 12,
-
-
-    status varchar(30) default 'ACTIVE',
-
-
-    created_at timestamp default now()
-
+    created_at timestamp
+    default now()
 
 );
 
@@ -167,34 +159,68 @@ create table if not exists warranties (
 
 /*
 =========================================================
-INDEXES
-
-Improve search speed
+ADMINS TABLE
 =========================================================
 */
 
+create table if not exists admins (
 
-create index if not exists
+    id uuid primary key default uuid_generate_v4(),
 
-idx_warranty_serial
+    user_id uuid unique,
 
-on warranties(serial_number);
+    name varchar(100),
+
+    email varchar(150)
+    unique,
+
+    role varchar(50)
+    default 'ADMIN',
+
+    status varchar(20)
+    default 'ACTIVE',
+
+    created_at timestamp
+    default now()
+
+);
 
 
 
-create index if not exists
+/*
+=========================================================
+SUPPORT TICKETS
+=========================================================
+*/
 
-idx_warranty_mobile
+create table if not exists support_tickets (
 
-on warranties(mobile);
+    id uuid primary key default uuid_generate_v4(),
 
+    ticket_number varchar(50)
+    unique not null,
 
+    customer_name varchar(150),
 
-create index if not exists
+    mobile varchar(15),
 
-idx_dealer_code
+    serial_number varchar(50),
 
-on dealers(dealer_code);
+    issue text,
+
+    priority varchar(20)
+    default 'NORMAL',
+
+    status varchar(30)
+    default 'OPEN',
+
+    created_at timestamp
+    default now(),
+
+    updated_at timestamp
+    default now()
+
+);
 
 
 
@@ -207,190 +233,32 @@ PART 1 END
 /*
 =========================================================
 LIYAS Electronics
-Database Structure
-
-Part 2
-
-Tables:
-- admins
-- support_tickets
-- service_history
-- warranty_events
-
-Security:
-- RLS Base
-=========================================================
-*/
-
-
-/*
-=========================================================
-ADMINS TABLE
-
-Admin panel users
-=========================================================
-*/
-
-create table if not exists admins (
-
-    id uuid primary key default uuid_generate_v4(),
-
-    user_id uuid unique,
-
-    name varchar(100) not null,
-
-    email varchar(150) unique,
-
-    role varchar(50) default 'ADMIN',
-
-    status varchar(20) default 'ACTIVE',
-
-    created_at timestamp default now()
-
-);
-
-
-
-/*
-=========================================================
-SUPPORT TICKETS
-
-Customer complaint management
-=========================================================
-*/
-
-create table if not exists support_tickets (
-
-    id uuid primary key default uuid_generate_v4(),
-
-
-    ticket_number varchar(50) unique not null,
-
-
-    customer_name varchar(150),
-
-
-    mobile varchar(15),
-
-
-    email varchar(150),
-
-
-    serial_number varchar(50),
-
-
-    product_name varchar(100),
-
-
-    issue text,
-
-
-    priority varchar(20) default 'NORMAL',
-
-
-    status varchar(30) default 'OPEN',
-
-
-    assigned_to uuid,
-
-
-    created_at timestamp default now(),
-
-
-    updated_at timestamp default now()
-
-);
-
-
-
-/*
-=========================================================
-SERVICE HISTORY
-
-Stores repair/service records
-=========================================================
-*/
-
-create table if not exists service_history (
-
-    id uuid primary key default uuid_generate_v4(),
-
-
-    warranty_id uuid,
-
-
-    serial_number varchar(50),
-
-
-    service_type varchar(50),
-
-
-    complaint text,
-
-
-    technician_name varchar(100),
-
-
-    service_note text,
-
-
-    service_status varchar(30)
-    default 'PENDING',
-
-
-    service_date timestamp default now()
-
-);
-
-
-
-/*
-=========================================================
-WARRANTY EVENTS
-
-Complete warranty activity log
-
-Example:
-Registration
-Verification
-Service
-Status Change
+LIYAS Care Database
+
+FINAL SUPABASE SQL
+PART 2
+
+Includes:
+- Relationships
+- Indexes
+- Security (RLS)
+- Policies
 
 =========================================================
 */
-
-create table if not exists warranty_events (
-
-    id uuid primary key default uuid_generate_v4(),
-
-
-    warranty_id uuid,
-
-
-    serial_number varchar(50),
-
-
-    event_type varchar(50),
-
-
-    event_message text,
-
-
-    created_by varchar(100),
-
-
-    created_at timestamp default now()
-
-);
-
 
 
 /*
 =========================================================
 FOREIGN KEY RELATIONSHIPS
-
 =========================================================
 */
+
+
+alter table warranties
+
+drop constraint if exists fk_warranty_dealer;
+
 
 
 alter table warranties
@@ -405,79 +273,281 @@ on delete set null;
 
 
 
-alter table service_history
+/*
+=========================================================
+SERVICE HISTORY TABLE
+=========================================================
+*/
 
-add constraint fk_service_warranty
+create table if not exists service_history (
 
-foreign key (warranty_id)
+    id uuid primary key default uuid_generate_v4(),
 
-references warranties(id)
+    warranty_id uuid,
 
-on delete cascade;
+    serial_number varchar(50),
 
+    complaint text,
 
+    technician_name varchar(100),
 
-alter table warranty_events
+    service_note text,
 
-add constraint fk_event_warranty
+    status varchar(30)
+    default 'PENDING',
 
-foreign key (warranty_id)
+    service_date timestamp
+    default now()
 
-references warranties(id)
-
-on delete cascade;
+);
 
 
 
 /*
 =========================================================
-ROW LEVEL SECURITY ENABLE
+WARRANTY EVENT LOG
 
-Supabase Security Layer
+Tracks all activities
+
+=========================================================
+*/
+
+create table if not exists warranty_events (
+
+    id uuid primary key default uuid_generate_v4(),
+
+    warranty_id uuid,
+
+    serial_number varchar(50),
+
+    event_type varchar(50),
+
+    event_message text,
+
+    created_by varchar(100),
+
+    created_at timestamp
+    default now()
+
+);
+
+
+
+/*
+=========================================================
+INDEXES
+
+Fast Search
+=========================================================
+*/
+
+
+create index if not exists idx_serial_number
+
+on warranties(serial_number);
+
+
+
+create index if not exists idx_customer_mobile
+
+on warranties(mobile);
+
+
+
+create index if not exists idx_product_code
+
+on products(product_code);
+
+
+
+create index if not exists idx_dealer_code
+
+on dealers(dealer_code);
+
+
+
+create index if not exists idx_ticket_number
+
+on support_tickets(ticket_number);
+
+
+
+/*
+=========================================================
+ENABLE ROW LEVEL SECURITY
+=========================================================
+*/
+
+
+alter table products enable row level security;
+
+alter table warranties enable row level security;
+
+alter table dealers enable row level security;
+
+alter table admins enable row level security;
+
+alter table support_tickets enable row level security;
+
+alter table service_history enable row level security;
+
+alter table warranty_events enable row level security;
+
+
+
+/*
+=========================================================
+REMOVE OLD POLICIES
+
+Safe Re-run Support
 
 =========================================================
 */
 
 
-alter table warranties
-
-enable row level security;
-
-
-
-alter table dealers
-
-enable row level security;
+drop policy if exists 
+"Public view products"
+on products;
 
 
 
-alter table products
-
-enable row level security;
-
-
-
-alter table support_tickets
-
-enable row level security;
+drop policy if exists
+"Public warranty search"
+on warranties;
 
 
 
-alter table service_history
-
-enable row level security;
-
-
-
-alter table warranty_events
-
-enable row level security;
+drop policy if exists
+"Dealer own warranty"
+on warranties;
 
 
 
-alter table admins
+drop policy if exists
+"Dealer profile"
+on dealers;
 
-enable row level security;
+
+
+drop policy if exists
+"Admin full access warranty"
+on warranties;
+
+
+
+/*
+=========================================================
+PRODUCT POLICY
+
+Website product page
+
+=========================================================
+*/
+
+
+create policy
+
+"Public view products"
+
+on products
+
+for select
+
+using
+
+(
+    status='ACTIVE'
+);
+
+
+
+/*
+=========================================================
+WARRANTY CHECK POLICY
+
+Public serial verification
+
+NOTE:
+Later we will create a secure RPC
+for hiding customer data.
+
+=========================================================
+*/
+
+
+create policy
+
+"Public warranty search"
+
+on warranties
+
+for select
+
+using
+
+(
+    true
+);
+
+
+
+/*
+=========================================================
+DEALER PROFILE POLICY
+=========================================================
+*/
+
+
+create policy
+
+"Dealer profile"
+
+on dealers
+
+for select
+
+using
+
+(
+
+    auth.uid() = user_id
+
+);
+
+
+
+/*
+=========================================================
+DEALER WARRANTY POLICY
+=========================================================
+*/
+
+
+create policy
+
+"Dealer own warranty"
+
+on warranties
+
+for select
+
+using
+
+(
+
+dealer_id in
+
+(
+
+select id
+
+from dealers
+
+where user_id = auth.uid()
+
+)
+
+);
 
 
 
@@ -490,15 +560,18 @@ PART 2 END
 /*
 =========================================================
 LIYAS Electronics
-Database Structure
+LIYAS Care Database
 
-Part 3
+FINAL SUPABASE SQL
+PART 3
 
 Includes:
-- Row Level Security Policies
-- Access Rules
-- Initial Product Data
-- Final Database Setup
+- Admin Access
+- Insert Security
+- Warranty Registration Permission
+- Sample Products
+- Update Trigger
+- Final Setup
 
 =========================================================
 */
@@ -506,174 +579,114 @@ Includes:
 
 /*
 =========================================================
-PRODUCT PUBLIC ACCESS
-
-Products website par dikhane ke liye
+ADMIN ACCESS POLICIES
 =========================================================
 */
 
 
-create policy "Public can view active products"
+drop policy if exists
 
-on products
+"Admin full access warranty"
 
-for select
-
-using (
-
-    status = 'ACTIVE'
-
-);
+on warranties;
 
 
 
-/*
-=========================================================
-WARRANTY PUBLIC CHECK
+create policy
 
-Customer serial number se warranty check kar sake
-
-=========================================================
-*/
-
-
-create policy "Public can check warranty"
-
-on warranties
-
-for select
-
-using (
-
-    true
-
-);
-
-
-
-/*
-=========================================================
-DEALER ACCESS
-
-Dealer apne records dekh sake
-
-=========================================================
-*/
-
-
-create policy "Dealer view own warranties"
-
-on warranties
-
-for select
-
-using (
-
-    dealer_id IN (
-
-        select id
-
-        from dealers
-
-        where user_id = auth.uid()
-
-    )
-
-);
-
-
-
-/*
-=========================================================
-DEALER PROFILE ACCESS
-
-=========================================================
-*/
-
-
-create policy "Dealer view own profile"
-
-on dealers
-
-for select
-
-using (
-
-    user_id = auth.uid()
-
-);
-
-
-
-/*
-=========================================================
-ADMIN ACCESS
-
-=========================================================
-*/
-
-
-create policy "Admin full warranty access"
+"Admin full access warranty"
 
 on warranties
 
 for all
 
-using (
+using
 
-    exists (
+(
 
-        select 1
+exists
 
-        from admins
+(
 
-        where admins.user_id = auth.uid()
+select 1
 
-    )
+from admins
 
-);
+where admins.user_id = auth.uid()
 
-
-
-create policy "Admin full dealer access"
-
-on dealers
-
-for all
-
-using (
-
-    exists (
-
-        select 1
-
-        from admins
-
-        where admins.user_id = auth.uid()
-
-    )
+)
 
 );
 
 
 
-create policy "Admin full product access"
+drop policy if exists
+
+"Admin full access products"
+
+on products;
+
+
+
+create policy
+
+"Admin full access products"
 
 on products
 
 for all
 
-using (
+using
 
-    exists (
+(
 
-        select 1
+exists
 
-        from admins
+(
 
-        where admins.user_id = auth.uid()
+select 1
 
-    )
+from admins
+
+where admins.user_id = auth.uid()
+
+)
+
+);
+
+
+
+drop policy if exists
+
+"Admin full access dealers"
+
+on dealers;
+
+
+
+create policy
+
+"Admin full access dealers"
+
+on dealers
+
+for all
+
+using
+
+(
+
+exists
+
+(
+
+select 1
+
+from admins
+
+where admins.user_id = auth.uid()
+
+)
 
 );
 
@@ -681,43 +694,104 @@ using (
 
 /*
 =========================================================
-SUPPORT TICKET ACCESS
+WARRANTY REGISTRATION INSERT
+
+Website warranty form ke liye
 
 =========================================================
 */
 
 
-create policy "Customer create support ticket"
+drop policy if exists
+
+"Public warranty registration"
+
+on warranties;
+
+
+
+create policy
+
+"Public warranty registration"
+
+on warranties
+
+for insert
+
+with check
+
+(
+
+true
+
+);
+
+
+
+/*
+=========================================================
+SUPPORT TICKET POLICIES
+=========================================================
+*/
+
+
+drop policy if exists
+
+"Public create ticket"
+
+on support_tickets;
+
+
+
+create policy
+
+"Public create ticket"
 
 on support_tickets
 
 for insert
 
-with check (
+with check
 
-    true
+(
+
+true
 
 );
 
 
 
-create policy "Admin manage support tickets"
+drop policy if exists
+
+"Admin support access"
+
+on support_tickets;
+
+
+
+create policy
+
+"Admin support access"
 
 on support_tickets
 
 for all
 
-using (
+using
 
-    exists (
+(
 
-        select 1
+exists
 
-        from admins
+(
 
-        where admins.user_id = auth.uid()
+select 1
 
-    )
+from admins
+
+where admins.user_id = auth.uid()
+
+)
 
 );
 
@@ -725,104 +799,12 @@ using (
 
 /*
 =========================================================
-SAMPLE PRODUCTS
-
-LIYAS Product Catalog
-
+AUTO UPDATE TIMESTAMP FUNCTION
 =========================================================
 */
 
 
-insert into products
-
-(
-
-product_code,
-
-product_name,
-
-category,
-
-model_number,
-
-warranty_months,
-
-description
-
-)
-
-values
-
-
-(
-
-'LY-TV32',
-
-'LIYAS 32 Inch Smart LED TV',
-
-'LED TV',
-
-'LY32S01',
-
-12,
-
-'Premium Smart LED TV designed for Indian homes'
-
-),
-
-
-
-(
-
-'LY-LB09',
-
-'LIYAS 9W LED Bulb',
-
-'LED Lighting',
-
-'LYLB09',
-
-24,
-
-'Energy efficient LED bulb'
-
-),
-
-
-
-(
-
-'LY-STB01',
-
-'LIYAS MPEG Set Top Box',
-
-'Set Top Box',
-
-'LYSTB01',
-
-12,
-
-'Reliable digital television receiver'
-
-)
-
-on conflict
-
-(product_code)
-
-do nothing;
-
-
-
-/*
-=========================================================
-UPDATED TIMESTAMP FUNCTION
-
-=========================================================
-*/
-
-
-create or replace function update_timestamp()
+create or replace function update_updated_at()
 
 returns trigger
 
@@ -832,9 +814,9 @@ as $$
 
 begin
 
-    new.updated_at = now();
+new.updated_at = now();
 
-    return new;
+return new;
 
 end;
 
@@ -842,15 +824,17 @@ $$;
 
 
 
-/*
-=========================================================
-SUPPORT TICKET AUTO UPDATE
+drop trigger if exists
 
-=========================================================
-*/
+support_ticket_update_time
+
+on support_tickets;
 
 
-create trigger update_support_ticket_time
+
+create trigger
+
+support_ticket_update_time
 
 before update
 
@@ -858,15 +842,119 @@ on support_tickets
 
 for each row
 
-execute procedure update_timestamp();
+execute procedure update_updated_at();
 
 
 
 /*
 =========================================================
-FINAL DATABASE READY
+LIYAS INITIAL PRODUCTS
 
-LIYAS CARE DATABASE v1.0
+Demo nahi, actual catalog structure
+
+=========================================================
+*/
+
+
+insert into products
+
+(
+product_code,
+product_name,
+category,
+model_number,
+warranty_months,
+description
+)
+
+values
+
+
+(
+'LY-TV32-S01',
+'LIYAS 32 Inch Smart LED TV',
+'LED TV',
+'LY32S01',
+12,
+'Premium Smart LED Television designed for Indian homes.'
+),
+
+
+(
+'LY-LB09-B01',
+'LIYAS 9W LED Bulb',
+'LED Lighting',
+'LYLB09',
+24,
+'Energy efficient LED bulb with long life performance.'
+),
+
+
+(
+'LY-STB-MPEG01',
+'LIYAS Digital Set Top Box',
+'Set Top Box',
+'LYSTB01',
+12,
+'Reliable digital entertainment solution.'
+)
+
+
+on conflict(product_code)
+
+do nothing;
+
+
+
+/*
+=========================================================
+DATABASE VERSION
+
+=========================================================
+*/
+
+
+create table if not exists system_settings
+
+(
+
+id uuid primary key default uuid_generate_v4(),
+
+setting_key varchar(100) unique,
+
+setting_value text,
+
+created_at timestamp default now()
+
+);
+
+
+
+insert into system_settings
+
+(
+setting_key,
+setting_value
+)
+
+values
+
+(
+'database_version',
+'1.0'
+)
+
+on conflict(setting_key)
+
+do update
+
+set setting_value='1.0';
+
+
+
+/*
+=========================================================
+LIYAS CARE DATABASE READY
 
 =========================================================
 */
