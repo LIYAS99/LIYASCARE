@@ -103,9 +103,10 @@ function mobileMenu() {
 
             navLinks.classList.contains("show")
 
-            ? "✕
-
-            : "☰";
+           menuButton.innerHTML =
+    navLinks.classList.contains("show")
+        ? "✕"
+        : "☰";
 
     });
 
