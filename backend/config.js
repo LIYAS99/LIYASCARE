@@ -1,82 +1,27 @@
-/*
-=========================================================
-LIYAS Electronics
-Configuration
-Production Ready
-Version : 1.0.0
-=========================================================
-*/
-
 "use strict";
 
 /*
-=========================================================
-SUPABASE CONFIGURATION
-Replace these values with your own project details.
-=========================================================
+=========================================
+LIYAS WARRANTY CONFIG
+=========================================
 */
 
-const APP_CONFIG = Object.freeze({
+const APP_CONFIG = {
 
-    APP_NAME: "LIYAS Electronics",
+    APP_NAME: "LIYAS Warranty",
 
-    APP_VERSION: "1.0.0",
-
-    COMPANY: "LIYAS Electronics",
-
-    TAGLINE: "Designed for India. Built to Last.",
+    VERSION: "2.0.0",
 
     SUPABASE: {
 
-        URL: "https://qhuygccueklrlmrmsavi.supabase.co",
+        URL: "https://eazfziukjtnaczgxvnmm.supabase.co",
 
-        ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFodXlnY2N1ZWtscmxtcm1zYXZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0MjcyNTUsImV4cCI6MjEwMTAwMzI1NX0.168BBeR0BvrjCu-MRu2FTA05oTzXc9aXDrOWJHIejKA"
-
-    },
-
-    WARRANTY: {
-
-        SERIAL_PREFIX: "LY",
-
-        MIN_SERIAL_LENGTH: 8,
-
-        MAX_SERIAL_LENGTH: 30
-
-    },
-
-    QR: {
-
-        ENABLED: true
-
-    },
-
-    SECURITY: {
-
-        DUPLICATE_SERIAL_CHECK: true,
-
-        REQUIRE_DEALER_LOGIN: true
+        ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVhemZ6aXVranRuYWN6Z3h2bm1tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU4NTYwODgsImV4cCI6MjEwMTQzMjA4OH0.AEHIdMjW-PQrGaW2PtWntS1nJMiM7aPxea1pyr65UC8"
 
     }
 
-});
+};
 
-
-/*
-=========================================================
-Freeze Nested Objects
-=========================================================
-*/
-
-Object.freeze(APP_CONFIG.SUPABASE);
-Object.freeze(APP_CONFIG.WARRANTY);
-Object.freeze(APP_CONFIG.QR);
-Object.freeze(APP_CONFIG.SECURITY);
-
-
-/*
-=========================================================
-Global Read Only Access
-=========================================================
-*/
+Object.freeze(APP_CONFIG);
 
 window.APP_CONFIG = APP_CONFIG;
