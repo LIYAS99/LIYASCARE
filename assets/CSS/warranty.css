@@ -1,0 +1,422 @@
+/* =====================================================
+   LIYAS ELECTRONICS
+   QR WARRANTY SECTION
+   Version: 1.0.0
+===================================================== */
+
+
+/* =========================
+   SECTION
+========================= */
+
+.warranty-section {
+
+    padding:
+
+    var(--space-xl) 0;
+
+    background:
+
+    radial-gradient(
+        circle at left,
+        rgba(14,138,75,.18),
+        transparent 35%
+    ),
+
+    #080808;
+
+    overflow:hidden;
+
+}
+
+
+
+/* =========================
+   WRAPPER
+========================= */
+
+
+.warranty-wrapper {
+
+    display:grid;
+
+    grid-template-columns:
+
+    1fr 1fr;
+
+    align-items:center;
+
+    gap:80px;
+
+}
+
+
+
+/* =========================
+   CONTENT
+========================= */
+
+
+.warranty-left h2 {
+
+    font-size:
+
+    clamp(
+        40px,
+        5vw,
+        65px
+    );
+
+    margin-bottom:25px;
+
+}
+
+
+
+.warranty-left h2 span {
+
+    background:
+
+    var(--gradient-brand);
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+.warranty-left p {
+
+    max-width:600px;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+
+}
+
+
+
+/* =========================
+   FEATURES
+========================= */
+
+
+.warranty-features {
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:20px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+.feature-item {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:18px;
+
+    border-radius:
+
+    var(--radius-md);
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+}
+
+
+
+.feature-item i {
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(255,122,0,.15);
+
+    color:
+
+    var(--saffron);
+
+    font-size:22px;
+
+}
+
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+
+.warranty-buttons {
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+
+
+/* =========================
+   QR CARD
+========================= */
+
+
+.warranty-right {
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+
+.qr-card {
+
+    position:relative;
+
+    width:420px;
+
+    height:520px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:
+
+    40px;
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    overflow:hidden;
+
+}
+
+
+
+.qr-card img {
+
+    width:70%;
+
+    position:relative;
+
+    z-index:2;
+
+    filter:
+
+    drop-shadow(
+    0 30px 50px rgba(0,0,0,.7)
+    );
+
+}
+
+
+
+/* =========================
+   SCAN ANIMATION
+========================= */
+
+
+.scan-ring {
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    border:
+
+    2px solid var(--saffron);
+
+    animation:
+
+    ringPulse 3s infinite;
+
+}
+
+
+
+.scan-line {
+
+    position:absolute;
+
+    width:70%;
+
+    height:3px;
+
+    background:
+
+    var(--gradient-brand);
+
+    animation:
+
+    scanMove 2.5s infinite;
+
+    z-index:3;
+
+}
+
+
+
+@keyframes ringPulse {
+
+
+0% {
+
+    transform:scale(.8);
+
+    opacity:.8;
+
+}
+
+
+100% {
+
+    transform:scale(1.3);
+
+    opacity:0;
+
+}
+
+
+}
+
+
+
+@keyframes scanMove {
+
+
+0% {
+
+    transform:translateY(-120px);
+
+}
+
+
+50% {
+
+    transform:translateY(120px);
+
+}
+
+
+100% {
+
+    transform:translateY(-120px);
+
+}
+
+
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+
+@media(max-width:1000px){
+
+
+.warranty-wrapper {
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+
+.warranty-left p {
+
+    margin-inline:auto;
+
+}
+
+
+
+.warranty-features {
+
+    text-align:left;
+
+}
+
+
+.warranty-buttons {
+
+    justify-content:center;
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.warranty-features {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.qr-card {
+
+    width:300px;
+
+    height:380px;
+
+}
+
+
+}
