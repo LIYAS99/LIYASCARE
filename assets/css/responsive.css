@@ -1,0 +1,391 @@
+/* =====================================================
+   LIYAS ELECTRONICS
+   RESPONSIVE SYSTEM
+   Version: 1.0.0
+===================================================== */
+
+
+/* =====================================================
+   LARGE TABLET / SMALL LAPTOP
+===================================================== */
+
+@media(max-width:1200px){
+
+
+:root {
+
+    --fs-xxl:70px;
+
+    --fs-xl:50px;
+
+}
+
+
+.nav-menu {
+
+    gap:25px;
+
+}
+
+
+.products-grid {
+
+    gap:25px;
+
+}
+
+
+}
+
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:992px){
+
+
+:root {
+
+    --space-xl:80px;
+
+}
+
+
+/* Container */
+
+.container {
+
+    width:92%;
+
+}
+
+
+/* Hero */
+
+.hero-container {
+
+    grid-template-columns:1fr;
+
+}
+
+
+.hero-content {
+
+    text-align:center;
+
+    margin:auto;
+
+}
+
+
+.hero-buttons {
+
+    justify-content:center;
+
+}
+
+
+
+/* Manufacturing */
+
+.sticky-wrapper {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.manufacturing-left {
+
+    position:relative;
+
+    top:0;
+
+}
+
+
+
+/* Products */
+
+.products-grid {
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+}
+
+
+
+/* Dealer */
+
+.dealer-wrapper {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+/* Export */
+
+.export-wrapper {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+/* Contact */
+
+.contact-wrapper {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+/* Footer */
+
+.footer-container {
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+}
+
+
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px){
+
+
+:root {
+
+    --fs-xl:40px;
+
+    --fs-large:30px;
+
+    --space-lg:50px;
+
+    --space-xl:60px;
+
+}
+
+
+
+/* Typography */
+
+h1 {
+
+    font-size:42px;
+
+}
+
+
+h2 {
+
+    font-size:34px;
+
+}
+
+
+
+/* Navbar */
+
+.navbar {
+
+    height:80px;
+
+}
+
+
+.nav-container {
+
+    height:60px;
+
+}
+
+
+
+/* Hero */
+
+.hero {
+
+    padding-top:100px;
+
+}
+
+
+.hero-description {
+
+    font-size:16px;
+
+}
+
+
+.hero-buttons {
+
+    flex-direction:column;
+
+}
+
+
+
+.btn-primary,
+.btn-secondary {
+
+    width:100%;
+
+}
+
+
+
+/* Why Liyas */
+
+.why-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+.why-features {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+/* Products */
+
+.products-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+/* Warranty */
+
+.warranty-wrapper {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.warranty-features {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+/* Export */
+
+.export-features {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+/* Contact */
+
+.contact-form {
+
+    padding:25px;
+
+}
+
+
+
+/* Footer */
+
+.footer-container {
+
+    grid-template-columns:1fr;
+
+}
+
+
+}
+
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:480px){
+
+
+.hero-title {
+
+    font-size:36px;
+
+}
+
+
+
+.section-title {
+
+    font-size:32px;
+
+}
+
+
+
+.product-card {
+
+    padding:20px;
+
+}
+
+
+
+.assembly-stage {
+
+    padding:25px;
+
+}
+
+
+
+.qr-card {
+
+    width:280px;
+
+    height:360px;
+
+}
+
+
+
+.footer {
+
+    padding-top:60px;
+
+}
+
+
+}
