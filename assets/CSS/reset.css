@@ -1,0 +1,298 @@
+/* =====================================================
+   LIYAS ELECTRONICS
+   CSS RESET
+   Version: 1.0.0
+===================================================== */
+
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+*,
+*::before,
+*::after {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+/* =========================
+   HTML BODY
+========================= */
+
+html {
+
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+
+}
+
+
+body {
+
+    background: var(--primary-black);
+
+    color: var(--text-primary);
+
+    font-family: var(--font-primary);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+
+    text-rendering: optimizeLegibility;
+
+}
+
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+
+    background: var(--saffron);
+
+    color: var(--white);
+
+}
+
+
+
+/* =========================
+   IMAGES
+========================= */
+
+img {
+
+    max-width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+    transition: var(--transition-normal);
+
+}
+
+
+
+/* =========================
+   LISTS
+========================= */
+
+ul,
+ol {
+
+    list-style: none;
+
+}
+
+
+
+/* =========================
+   BUTTON RESET
+========================= */
+
+button,
+input,
+textarea,
+select {
+
+    font-family: inherit;
+
+    border: none;
+
+    outline: none;
+
+}
+
+
+
+/* =========================
+   BUTTON BASE
+========================= */
+
+button {
+
+    cursor: pointer;
+
+    background: transparent;
+
+    color: inherit;
+
+}
+
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+}
+
+
+
+/* =========================
+   PARAGRAPH
+========================= */
+
+p {
+
+    color: var(--text-secondary);
+
+    font-size: var(--fs-normal);
+
+}
+
+
+
+/* =========================
+   SECTION DEFAULT
+========================= */
+
+section {
+
+    position: relative;
+
+    width: 100%;
+
+}
+
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+
+    width: min(
+        90%,
+        var(--container-width)
+    );
+
+    margin-inline: auto;
+
+}
+
+
+
+/* =========================
+   GLOBAL HIDDEN
+========================= */
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+
+/* =========================
+   GLASS UTILITY
+========================= */
+
+.glass {
+
+    background: var(--glass-bg);
+
+    border: var(--glass-border);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+}
+
+
+
+/* =========================
+   NO SELECT
+========================= */
+
+.no-select {
+
+    user-select: none;
+
+}
+
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: var(--secondary-black);
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--saffron);
+
+    border-radius: var(--radius-pill);
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--gold);
+
+}
+
+
+/* =========================
+   MOBILE TAP FIX
+========================= */
+
+html {
+
+    -webkit-tap-highlight-color: transparent;
+
+}
