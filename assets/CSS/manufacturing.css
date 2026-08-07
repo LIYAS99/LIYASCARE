@@ -1,0 +1,411 @@
+/* =====================================================
+   LIYAS ELECTRONICS
+   MANUFACTURING EXPERIENCE
+   Version: 1.0.0
+===================================================== */
+
+
+/* =========================
+   SECTION
+========================= */
+
+.manufacturing {
+
+    padding:
+
+    var(--space-xl) 0;
+
+    background:
+
+    #050505;
+
+    overflow:hidden;
+
+}
+
+
+
+/* =========================
+   STICKY WRAPPER
+========================= */
+
+
+.sticky-wrapper {
+
+    display:grid;
+
+    grid-template-columns:
+
+    40% 60%;
+
+    gap:50px;
+
+    align-items:start;
+
+}
+
+
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+
+.manufacturing-left {
+
+    position:sticky;
+
+    top:150px;
+
+    height:max-content;
+
+}
+
+
+
+.section-mini {
+
+    color:
+
+    var(--saffron);
+
+    letter-spacing:4px;
+
+    font-size:14px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.manufacturing-left .section-title {
+
+    font-size:
+
+    clamp(
+        40px,
+        5vw,
+        70px
+    );
+
+}
+
+
+
+.manufacturing-left .section-description {
+
+    margin-top:30px;
+
+    line-height:1.8;
+
+}
+
+
+
+/* =========================
+   PROGRESS LINE
+========================= */
+
+
+.progress-line {
+
+    width:3px;
+
+    height:250px;
+
+    background:
+
+    rgba(255,255,255,.15);
+
+    margin-top:50px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+.progress-fill {
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:0%;
+
+    background:
+
+    var(--gradient-brand);
+
+}
+
+
+
+/* =========================
+   RIGHT STAGES
+========================= */
+
+
+.manufacturing-right {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:150px;
+
+}
+
+
+
+/* =========================
+   ASSEMBLY CARD
+========================= */
+
+
+.assembly-stage {
+
+    min-height:600px;
+
+    padding:50px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    border-radius:
+
+    40px;
+
+    background:
+
+    rgba(255,255,255,.03);
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+
+    var(--transition-slow);
+
+}
+
+
+
+.assembly-stage::before {
+
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    background:
+
+    var(--saffron);
+
+    filter:
+
+    blur(120px);
+
+    opacity:.12;
+
+}
+
+
+
+/* =========================
+   IMAGE
+========================= */
+
+
+.assembly-stage img {
+
+    width:
+
+    min(70%,400px);
+
+    height:350px;
+
+    object-fit:contain;
+
+    position:relative;
+
+    z-index:2;
+
+    filter:
+
+    drop-shadow(
+        0 30px 40px rgba(0,0,0,.6)
+    );
+
+    transition:
+
+    var(--transition-slow);
+
+}
+
+
+
+.assembly-stage:hover img {
+
+
+    transform:
+
+    scale(1.08)
+    translateY(-15px);
+
+
+}
+
+
+
+/* =========================
+   TEXT
+========================= */
+
+
+.assembly-stage h3 {
+
+    margin-top:40px;
+
+    font-size:
+
+    32px;
+
+}
+
+
+
+.assembly-stage p {
+
+    max-width:450px;
+
+    margin-top:15px;
+
+    line-height:1.8;
+
+}
+
+
+
+/* =========================
+   PRODUCT GLOW VARIATIONS
+========================= */
+
+
+.stage2::before,
+.stage4::before {
+
+    background:
+
+    var(--deep-green);
+
+}
+
+
+
+.stage6::before {
+
+    background:
+
+    var(--gold);
+
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+
+@media(max-width:1000px){
+
+
+.sticky-wrapper {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.manufacturing-left {
+
+    position:relative;
+
+    top:0;
+
+}
+
+
+
+.manufacturing-right {
+
+    gap:70px;
+
+}
+
+
+
+.assembly-stage {
+
+    min-height:450px;
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.assembly-stage {
+
+    padding:30px;
+
+}
+
+
+.assembly-stage img {
+
+    height:250px;
+
+}
+
+
+
+.assembly-stage h3 {
+
+    font-size:26px;
+
+}
+
+
+}
