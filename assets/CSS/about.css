@@ -1,0 +1,434 @@
+/* =====================================================
+   LIYAS ELECTRONICS
+   WHY LIYAS SECTION
+   Version: 1.0.0
+===================================================== */
+
+
+/* =========================
+   SECTION
+========================= */
+
+.why-liyas {
+
+    padding:
+
+    var(--space-xl) 0;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #121212,
+        #0A0A0A
+    );
+
+    overflow:hidden;
+
+}
+
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.section-heading {
+
+    max-width:800px;
+
+    margin:
+
+    0 auto 80px;
+
+    text-align:center;
+
+}
+
+
+
+.section-heading p {
+
+    margin-top:20px;
+
+}
+
+
+
+/* =========================
+   GRID
+========================= */
+
+
+.why-grid {
+
+    display:grid;
+
+    grid-template-columns:
+
+    1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+
+
+/* =========================
+   CONTENT
+========================= */
+
+
+.why-content h3 {
+
+    font-size:
+
+    clamp(
+        28px,
+        3vw,
+        42px
+    );
+
+    margin-bottom:25px;
+
+}
+
+
+
+.why-content > p {
+
+    line-height:1.8;
+
+    margin-bottom:45px;
+
+}
+
+
+
+/* =========================
+   FEATURES
+========================= */
+
+
+.why-features {
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.why-feature {
+
+    display:flex;
+
+    gap:18px;
+
+    padding:25px;
+
+    border-radius:
+
+    var(--radius-lg);
+
+    background:
+
+    rgba(255,255,255,.04);
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+    transition:
+
+    var(--transition-normal);
+
+}
+
+
+
+.why-feature:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+    border-color:
+
+    rgba(255,122,0,.4);
+
+    box-shadow:
+
+    var(--orange-glow);
+
+}
+
+
+
+.why-feature i {
+
+    min-width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(255,122,0,.15);
+
+    color:
+
+    var(--saffron);
+
+    font-size:22px;
+
+}
+
+
+
+.why-feature h4 {
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.why-feature p {
+
+    font-size:14px;
+
+}
+
+
+
+/* =========================
+   IMAGE CARD
+========================= */
+
+
+.why-image-card {
+
+    position:relative;
+
+    border-radius:
+
+    35px;
+
+    overflow:hidden;
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    padding:15px;
+
+}
+
+
+
+.why-image-card img {
+
+    width:100%;
+
+    height:550px;
+
+    object-fit:cover;
+
+    border-radius:
+
+    25px;
+
+}
+
+
+
+.why-image-overlay {
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        transparent,
+        rgba(0,0,0,.7)
+    );
+
+}
+
+
+
+.why-badge {
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:40px;
+
+    padding:
+
+    15px 25px;
+
+    border-radius:
+
+    var(--radius-pill);
+
+    background:
+
+    rgba(255,255,255,.1);
+
+    backdrop-filter:
+
+    blur(15px);
+
+    border:
+
+    1px solid rgba(255,255,255,.2);
+
+    color:white;
+
+}
+
+
+
+/* =========================
+   STATS
+========================= */
+
+
+.stats-grid {
+
+    margin-top:35px;
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+
+
+.stat-card {
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:
+
+    var(--radius-lg);
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+}
+
+
+
+.stat-card h3 {
+
+    background:
+
+    var(--gradient-brand);
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+.stat-card p {
+
+    margin-top:8px;
+
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+
+@media(max-width:1000px){
+
+
+.why-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+.why-image-card img {
+
+    height:450px;
+
+}
+
+
+}
+
+
+
+@media(max-width:650px){
+
+
+.why-features {
+
+    grid-template-columns:1fr;
+
+}
+
+
+.stats-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+.why-image-card img {
+
+    height:350px;
+
+}
+
+
+}
