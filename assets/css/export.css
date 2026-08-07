@@ -1,0 +1,441 @@
+/* =====================================================
+   LIYAS ELECTRONICS
+   GLOBAL EXPORT SECTION
+   Version: 1.0.0
+===================================================== */
+
+
+/* =========================
+   SECTION
+========================= */
+
+.export-section {
+
+    padding:
+
+    var(--space-xl) 0;
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        rgba(212,175,55,.12),
+        transparent 40%
+    ),
+
+    #050505;
+
+    overflow:hidden;
+
+}
+
+
+
+/* =========================
+   HEADER
+========================= */
+
+
+.export-header {
+
+    max-width:850px;
+
+    margin:
+
+    0 auto 80px;
+
+    text-align:center;
+
+}
+
+
+
+.export-header h2 {
+
+    font-size:
+
+    clamp(
+        40px,
+        5vw,
+        70px
+    );
+
+}
+
+
+
+.export-header h2 span {
+
+    background:
+
+    var(--gradient-brand);
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+.export-header p {
+
+    margin-top:25px;
+
+    line-height:1.8;
+
+}
+
+
+
+/* =========================
+   EXPORT WRAPPER
+========================= */
+
+
+.export-wrapper {
+
+    display:grid;
+
+    grid-template-columns:
+
+    1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+
+
+/* =========================
+   WORLD VISUAL
+========================= */
+
+
+.world-map {
+
+    position:relative;
+
+    height:500px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+.world-map img {
+
+    width:90%;
+
+    opacity:.7;
+
+    filter:
+
+    drop-shadow(
+        0 0 40px rgba(255,122,0,.25)
+    );
+
+}
+
+
+
+/* =========================
+   CONNECTION DOTS
+========================= */
+
+
+.export-point {
+
+    position:absolute;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:
+
+    var(--saffron);
+
+    box-shadow:
+
+    0 0 25px var(--saffron);
+
+    animation:
+
+    pulsePoint 2s infinite;
+
+}
+
+
+
+.export-point::before {
+
+    content:"";
+
+    position:absolute;
+
+    inset:-15px;
+
+    border-radius:50%;
+
+    border:
+
+    1px solid var(--saffron);
+
+    animation:
+
+    pointRing 2s infinite;
+
+}
+
+
+
+.point-india {
+
+    top:48%;
+
+    left:55%;
+
+}
+
+
+.point-asia {
+
+    top:40%;
+
+    right:20%;
+
+}
+
+
+.point-europe {
+
+    top:30%;
+
+    left:38%;
+
+}
+
+
+.point-africa {
+
+    bottom:30%;
+
+    left:45%;
+
+}
+
+
+
+/* =========================
+   CONTENT
+========================= */
+
+
+.export-content h3 {
+
+    font-size:
+
+    38px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.export-content p {
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* =========================
+   EXPORT FEATURES
+========================= */
+
+
+.export-features {
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+
+
+.export-feature {
+
+    padding:25px;
+
+    border-radius:
+
+    var(--radius-lg);
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+    transition:
+
+    var(--transition-normal);
+
+}
+
+
+
+.export-feature:hover {
+
+    transform:
+
+    translateY(-8px);
+
+    border-color:
+
+    var(--gold);
+
+}
+
+
+
+.export-feature h4 {
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+
+@keyframes pulsePoint {
+
+
+0% {
+
+    transform:scale(1);
+
+}
+
+
+50% {
+
+    transform:scale(1.3);
+
+}
+
+
+100% {
+
+    transform:scale(1);
+
+}
+
+
+}
+
+
+
+@keyframes pointRing {
+
+
+0% {
+
+    transform:scale(.5);
+
+    opacity:1;
+
+}
+
+
+100% {
+
+    transform:scale(2);
+
+    opacity:0;
+
+}
+
+
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+
+@media(max-width:1000px){
+
+
+.export-wrapper {
+
+    grid-template-columns:1fr;
+
+}
+
+
+.world-map {
+
+    height:400px;
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.export-features {
+
+    grid-template-columns:1fr;
+
+}
+
+
+.world-map {
+
+    height:300px;
+
+}
+
+
+.export-content h3 {
+
+    font-size:30px;
+
+}
+
+
+}
