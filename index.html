@@ -1,331 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!--
-    ===========================================================
-    LIYAS Electronics
-    Homepage
-    Production Ready
-    Version : 1.0
-    Compatible : GitHub Pages + Supabase
-    ===========================================================
-    -->
 
+<head>
+
+    <!-- Basic -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- SEO -->
     <title>LIYAS Electronics | Designed for India. Built to Last.</title>
 
     <meta name="description"
-        content="LIYAS Electronics - Premium Consumer Electronics. Register Warranty, Check Warranty, Dealer Portal, Support and Products.">
+        content="LIYAS Electronics - Premium LED Bulbs, Smart LED TVs, DTH Set Top Boxes, TV Remotes, SMPS, Power Banks and Electronics Manufacturing Company.">
 
     <meta name="keywords"
-        content="LIYAS Electronics, LED TV, Warranty Registration, Electronics India, Dealer Portal">
+        content="LIYAS Electronics, LED Bulb, Smart TV, DTH, Remote, Electronics Manufacturing">
 
-    <meta name="author" content="LIYAS Electronics">
+    <meta name="author"
+        content="LIYAS Electronics">
 
-    <meta name="theme-color" content="#121212">
+    <meta name="theme-color"
+        content="#121212">
+
+    <meta name="robots"
+        content="index,follow">
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="LIYAS Electronics">
-    <meta property="og:description" content="Designed for India. Built to Last.">
-    <meta property="og:type" content="website">
+    <meta property="og:title"
+        content="LIYAS Electronics">
+
+    <meta property="og:description"
+        content="Designed for India. Built to Last.">
+
+    <meta property="og:type"
+        content="website">
+
+    <meta property="og:image"
+        content="assets/images/og-image.jpg">
 
     <!-- Favicon -->
 
-    <link rel="icon" href="assets/logo/favicon.png">
-
-    <!-- CSS -->
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="assets/logo/favicon.png">
 
     <!-- Google Fonts -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+    <!-- Remix Icons -->
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+        rel="stylesheet">
+
+    <!-- AOS Animation -->
+
+    <link rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <!-- Swiper -->
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet"
+        href="style.css">
 
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- ===============================
+     LIYAS Premium Loader
+================================ -->
 
-    <header class="navbar">
+<div id="loader">
 
-        <div class="container nav-container">
+    <div class="loader-bg"></div>
 
-            <a href="index.html" class="logo">
+    <div class="loader-content">
 
-                <img src="assets/logo/logo.png" alt="LIYAS Electronics Logo">
+        <div class="loader-logo">
 
-                <span>LIYAS</span>
+            <img
+                src="assets/logo/logo.png"
+                alt="LIYAS Electronics Logo">
+
+        </div>
+
+        <h1 class="loader-title">
+            LIYAS
+        </h1>
+
+        <p class="loader-subtitle">
+            Designed for India.
+            Built to Last.
+        </p>
+
+        <div class="loader-progress">
+
+            <div class="progress-bar">
+
+                <div class="progress-fill"></div>
+
+            </div>
+
+            <div class="progress-text">
+
+                <span id="loading-number">
+
+                    0%
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="loader-glow glow-orange"></div>
+
+    <div class="loader-glow glow-green"></div>
+
+</div>
+
+<!-- Loader End -->
+
+    <!-- ===================================================
+                PREMIUM GLASS NAVBAR
+==================================================== -->
+
+<header id="header" class="header">
+
+    <div class="nav-container">
+
+        <!-- Logo -->
+
+        <a href="index.html" class="logo">
+
+            <img
+                src="assets/logo/logo.png"
+                alt="LIYAS Logo">
+
+            <div class="logo-text">
+
+                <h2>LIYAS</h2>
+
+                <span>Electronics</span>
+
+            </div>
+
+        </a>
+
+        <!-- Navigation -->
+
+        <nav class="navbar">
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home" class="active">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#manufacturing">
+                        Manufacturing
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#products">
+                        Products
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#dealer">
+                        Dealers
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#warranty">
+                        Warranty
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <!-- Right Buttons -->
+
+        <div class="nav-right">
+
+            <button
+                class="icon-btn"
+                id="searchBtn"
+                aria-label="Search">
+
+                <i class="ri-search-line"></i>
+
+            </button>
+
+            <button
+                class="icon-btn"
+                id="themeBtn"
+                aria-label="Theme">
+
+                <i class="ri-sun-line"></i>
+
+            </button>
+
+            <a
+                href="pages/register.html"
+                class="register-btn">
+
+                Register Warranty
 
             </a>
 
-            <nav>
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Menu">
 
-                <ul class="nav-links">
-
-                    <li><a href="index.html" class="active">Home</a></li>
-
-                    <li><a href="pages/products.html">Products</a></li>
-
-                    <li><a href="pages/register.html">Register Warranty</a></li>
-
-                    <li><a href="pages/check.html">Check Warranty</a></li>
-
-                    <li><a href="pages/dealer.html">Dealer</a></li>
-
-                    <li><a href="pages/support.html">Support</a></li>
-
-                    <li><a href="pages/contact.html">Contact</a></li>
-
-                </ul>
-
-            </nav>
-
-            <button id="menuButton" class="menu-button" aria-label="Menu">
-
-                ☰
+                <i class="ri-menu-3-line"></i>
 
             </button>
 
         </div>
 
-    </header>
+    </div>
 
-    <!-- ================= HERO ================= -->
+</header>
 
-    <section class="hero">
+<!-- Mobile Navigation -->
 
-        <div class="hero-overlay"></div>
+<div class="mobile-menu" id="mobileMenu">
 
-        <div class="container hero-content">
+    <a href="#home">Home</a>
 
-            <div class="hero-text">
+    <a href="#about">About</a>
 
-                <span class="premium-badge">
+    <a href="#manufacturing">Manufacturing</a>
 
-                    PREMIUM ELECTRONICS
+    <a href="#products">Products</a>
+
+    <a href="#dealer">Dealers</a>
+
+    <a href="#warranty">Warranty</a>
+
+    <a href="#contact">Contact</a>
+
+    <a
+        href="pages/register.html"
+        class="mobile-register">
+
+        Register Warranty
+
+    </a>
+
+</div>
+
+<!-- Navbar End -->
+
+    <!-- =========================================================
+                     HERO SECTION
+========================================================== -->
+
+<section id="home" class="hero">
+
+    <!-- Background Video -->
+
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline>
+
+        <source
+            src="assets/videos/factory.mp4"
+            type="video/mp4">
+
+    </video>
+
+    <!-- Overlay -->
+
+    <div class="hero-overlay"></div>
+
+    <!-- Background Lights -->
+
+    <div class="orange-light"></div>
+    <div class="green-light"></div>
+
+    <!-- Hero Content -->
+
+    <div class="hero-container">
+
+        <div class="hero-left">
+
+            <span class="hero-tag">
+
+                🇮🇳 MADE IN INDIA
+
+            </span>
+
+            <h1>
+
+                Future of
+
+                <span>
+
+                    Electronics
 
                 </span>
 
-                <h1>
+                Starts Here.
 
-                    Designed for India.<br>
+            </h1>
 
-                    <span>Built to Last.</span>
+            <p>
 
-                </h1>
+                Premium LED Bulbs,
+                Smart TVs,
+                DTH Set Top Boxes,
+                TV Remotes,
+                SMPS,
+                Power Banks,
+                Air Coolers &
+                Future Electronics
+                manufactured with
+                world-class quality.
 
-                <p>
+            </p>
 
-                    Premium quality electronics engineered for Indian homes.
+            <div class="hero-buttons">
 
-                    Genuine products, digital warranty, trusted dealer network
+                <a href="#products"
+                    class="btn-primary">
 
-                    and customer-first support.
+                    Explore Products
 
-                </p>
+                </a>
 
-                <div class="hero-buttons">
+                <a href="#manufacturing"
+                    class="btn-secondary">
 
-                    <a href="pages/products.html" class="btn-primary">
-
-                        Explore Products
-
-                    </a>
-
-                    <a href="pages/register.html" class="btn-secondary">
-
-                        Register Warranty
-
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="hero-card glass">
-
-                <h3>Digital Warranty</h3>
-
-                <p>
-
-                    Register your product in less than one minute.
-
-                </p>
-
-                <hr>
-
-                <h3>Dealer Network</h3>
-
-                <p>
-
-                    Authorized dealers across India.
-
-                </p>
-
-                <hr>
-
-                <h3>Customer Support</h3>
-
-                <p>
-
-                    Fast and transparent service.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ================= FEATURES ================= -->
-
-    <section class="features">
-
-        <div class="container">
-
-            <h2 class="section-title">
-
-                Why Choose LIYAS?
-
-            </h2>
-
-            <div class="feature-grid">
-
-                <article class="glass feature-card">
-
-                    <h3>Premium Quality</h3>
-
-                    <p>
-
-                        Carefully selected components for long-lasting
-                        performance.
-
-                    </p>
-
-                </article>
-
-                <article class="glass feature-card">
-
-                    <h3>Digital Warranty</h3>
-
-                    <p>
-
-                        QR-ready warranty architecture with secure validation.
-
-                    </p>
-
-                </article>
-
-                <article class="glass feature-card">
-
-                    <h3>Trusted Dealers</h3>
-
-                    <p>
-
-                        Purchase only from authorized LIYAS partners.
-
-                    </p>
-
-                </article>
-
-                <article class="glass feature-card">
-
-                    <h3>Customer First</h3>
-
-                    <p>
-
-                        Reliable support with transparent service process.
-
-                    </p>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ================= PRODUCTS ================= -->
-
-    <section class="products-preview">
-
-        <div class="container">
-
-            <h2 class="section-title">
-
-                Featured Products
-
-            </h2>
-
-            <div class="product-grid">
-
-                <div class="glass product-card">
-
-                    <h3>LED TV</h3>
-
-                    <p>
-
-                        Smart entertainment built for Indian families.
-
-                    </p>
-
-                </div>
-
-                <div class="glass product-card">
-
-                    <h3>LED Bulb</h3>
-
-                    <p>
-
-                        Energy efficient lighting with long operational life.
-
-                    </p>
-
-                </div>
-
-                <div class="glass product-card">
-
-                    <h3>Set Top Box</h3>
-
-                    <p>
-
-                        Stable performance with reliable hardware.
-
-                    </p>
-
-                </div>
-
-                <div class="glass product-card">
-
-                    <h3>Accessories</h3>
-
-                    <p>
-
-                        Premium accessories designed for daily use.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="center">
-
-                <a href="pages/products.html" class="btn-primary">
-
-                    View All Products
+                    Our Manufacturing
 
                 </a>
 
@@ -333,104 +382,81 @@
 
         </div>
 
-    </section>
+        <!-- Right Side -->
 
-    <!-- ================= CTA ================= -->
+        <div class="hero-right">
 
-    <section class="cta">
+            <img
+                src="assets/images/bulb-3d.png"
+                class="floating-bulb"
+                alt="LED Bulb">
 
-        <div class="container glass cta-box">
-
-            <h2>
-
-                Protect Your Purchase
-
-            </h2>
-
-            <p>
-
-                Register your warranty today and enjoy faster support.
-
-            </p>
-
-            <a href="pages/register.html" class="btn-primary">
-
-                Register Now
-
-            </a>
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
 
         </div>
 
-    </section>
+    </div>
 
-    <!-- ================= FOOTER ================= -->
+    <!-- Bottom Cards -->
 
-    <footer>
+    <div class="hero-bottom">
 
-        <div class="container footer-grid">
+        <div class="hero-card">
 
-            <div>
+            <h2>100+</h2>
 
-                <h3>LIYAS Electronics</h3>
-
-                <p>
-
-                    Designed for India.
-
-                    Built to Last.
-
-                </p>
-
-            </div>
-
-            <div>
-
-                <h4>Quick Links</h4>
-
-                <ul>
-
-                    <li><a href="pages/about.html">About</a></li>
-
-                    <li><a href="pages/privacy.html">Privacy Policy</a></li>
-
-                    <li><a href="pages/terms.html">Terms & Conditions</a></li>
-
-                </ul>
-
-            </div>
-
-            <div>
-
-                <h4>Customer</h4>
-
-                <ul>
-
-                    <li><a href="pages/register.html">Warranty Registration</a></li>
-
-                    <li><a href="pages/check.html">Warranty Status</a></li>
-
-                    <li><a href="pages/support.html">Support</a></li>
-
-                </ul>
-
-            </div>
+            <p>Products Planned</p>
 
         </div>
 
-        <div class="copyright">
+        <div class="hero-card">
 
-            © 2026 LIYAS Electronics.
+            <h2>All India</h2>
 
-            All Rights Reserved.
+            <p>Dealer Network</p>
 
         </div>
 
-    </footer>
+        <div class="hero-card">
 
-    <!-- JS -->
+            <h2>Premium</h2>
 
-    <script src="assets/js/main.js"></script>
+            <p>Warranty System</p>
 
-</body>
+        </div>
 
-</html>
+        <div class="hero-card">
+
+            <h2>Export</h2>
+
+            <p>Global Vision</p>
+
+        </div>
+
+    </div>
+
+    <!-- Scroll -->
+
+    <div class="scroll-indicator">
+
+        <span>
+
+            Scroll
+
+        </span>
+
+        <div class="mouse">
+
+            <div class="wheel"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HERO END -->
+
+    
