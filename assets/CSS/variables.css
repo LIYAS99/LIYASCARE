@@ -1,0 +1,280 @@
+/* =====================================================
+   LIYAS ELECTRONICS
+   GLOBAL VARIABLES
+   Version: 1.0.0
+===================================================== */
+
+:root {
+
+
+/* =========================
+   BRAND COLORS
+========================= */
+
+--primary-black: #121212;
+
+--secondary-black: #0A0A0A;
+
+--surface-dark: #181818;
+
+--surface-glass: rgba(255,255,255,0.08);
+
+--saffron: #FF7A00;
+
+--saffron-light: #FF9D3D;
+
+--deep-green: #0E8A4B;
+
+--green-light: #16B866;
+
+--gold: #D4AF37;
+
+--white: #FFFFFF;
+
+--text-primary: #FFFFFF;
+
+--text-secondary: #B8B8B8;
+
+--text-dark: #111111;
+
+
+
+/* =========================
+   GRADIENTS
+========================= */
+
+--gradient-brand:
+
+linear-gradient(
+135deg,
+#FF7A00 0%,
+#D4AF37 50%,
+#0E8A4B 100%
+);
+
+
+--gradient-orange:
+
+linear-gradient(
+135deg,
+#FF7A00,
+#FFB000
+);
+
+
+--gradient-green:
+
+linear-gradient(
+135deg,
+#0E8A4B,
+#16B866
+);
+
+
+--gradient-dark:
+
+linear-gradient(
+180deg,
+#121212,
+#050505
+);
+
+
+
+/* =========================
+   GLOW EFFECTS
+========================= */
+
+--orange-glow:
+
+0 0 40px rgba(255,122,0,0.35);
+
+
+--green-glow:
+
+0 0 40px rgba(14,138,75,0.35);
+
+
+--gold-glow:
+
+0 0 40px rgba(212,175,55,0.35);
+
+
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+--font-primary:
+
+'Poppins',
+sans-serif;
+
+
+--font-heading:
+
+'Poppins',
+sans-serif;
+
+
+
+/* =========================
+   FONT SIZE
+========================= */
+
+--fs-small: 14px;
+
+--fs-normal: 16px;
+
+--fs-medium: 20px;
+
+--fs-large: 32px;
+
+--fs-xl: 56px;
+
+--fs-xxl: 80px;
+
+
+
+/* =========================
+   SPACING
+========================= */
+
+--space-xs: 8px;
+
+--space-sm: 16px;
+
+--space-md: 32px;
+
+--space-lg: 64px;
+
+--space-xl: 100px;
+
+
+
+/* =========================
+   BORDER RADIUS
+========================= */
+
+--radius-sm: 8px;
+
+--radius-md: 16px;
+
+--radius-lg: 30px;
+
+--radius-pill: 999px;
+
+
+
+/* =========================
+   GLASS EFFECT
+========================= */
+
+--glass-bg:
+
+rgba(
+255,
+255,
+255,
+0.08
+);
+
+
+--glass-border:
+
+1px solid rgba(
+255,
+255,
+255,
+0.15
+);
+
+
+
+/* =========================
+   SHADOWS
+========================= */
+
+--shadow-soft:
+
+0 10px 40px rgba(
+0,
+0,
+0,
+0.35
+);
+
+
+--shadow-heavy:
+
+0 30px 80px rgba(
+0,
+0,
+0,
+0.55
+);
+
+
+
+/* =========================
+   TRANSITIONS
+========================= */
+
+--transition-fast:
+
+0.25s ease;
+
+
+--transition-normal:
+
+0.5s ease;
+
+
+--transition-slow:
+
+0.9s cubic-bezier(
+0.16,
+1,
+0.3,
+1
+);
+
+
+
+/* =========================
+   Z INDEX
+========================= */
+
+--z-loader: 9999;
+
+--z-navbar: 1000;
+
+--z-modal: 2000;
+
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+--container-width:
+
+1280px;
+
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+--ease-premium:
+
+cubic-bezier(
+0.16,
+1,
+0.3,
+1
+);
+
+
+}
