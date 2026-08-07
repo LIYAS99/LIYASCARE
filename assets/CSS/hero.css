@@ -1,0 +1,591 @@
+/* =====================================================
+   LIYAS ELECTRONICS
+   PREMIUM HERO SECTION
+   Version: 1.0.0
+===================================================== */
+
+
+/* =========================
+   HERO WRAPPER
+========================= */
+
+.hero {
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    padding-top:100px;
+
+    background:
+
+    radial-gradient(
+        circle at 80% 50%,
+        rgba(255,122,0,.18),
+        transparent 35%
+    ),
+
+    radial-gradient(
+        circle at 20% 70%,
+        rgba(14,138,75,.15),
+        transparent 35%
+    ),
+
+    var(--primary-black);
+
+}
+
+
+
+/* =========================
+   BACKGROUND VIDEO
+========================= */
+
+
+.hero-video {
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:.35;
+
+    z-index:0;
+
+}
+
+
+
+.hero-overlay {
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        rgba(18,18,18,.95),
+        rgba(18,18,18,.45),
+        rgba(18,18,18,.8)
+    );
+
+    z-index:1;
+
+}
+
+
+
+/* =========================
+   HERO CONTAINER
+========================= */
+
+
+.hero-container {
+
+    position:relative;
+
+    z-index:2;
+
+    width:min(
+        90%,
+        var(--container-width)
+    );
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+
+    1fr 1fr;
+
+    align-items:center;
+
+    gap:40px;
+
+}
+
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+
+.hero-content {
+
+    max-width:650px;
+
+}
+
+
+
+.hero-tag {
+
+    display:inline-flex;
+
+    padding:
+
+    10px 20px;
+
+    border-radius:
+
+    var(--radius-pill);
+
+    background:
+
+    rgba(255,122,0,.12);
+
+    border:
+
+    1px solid rgba(255,122,0,.35);
+
+    color:
+
+    var(--saffron);
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.hero-title {
+
+    margin-bottom:25px;
+
+}
+
+
+
+.hero-description {
+
+    margin-bottom:40px;
+
+}
+
+
+
+/* =========================
+   HERO BUTTONS
+========================= */
+
+
+.hero-buttons {
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+
+
+.btn-primary {
+
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+
+    15px 35px;
+
+    border-radius:
+
+    var(--radius-pill);
+
+    background:
+
+    var(--gradient-brand);
+
+    color:#000;
+
+    font-weight:700;
+
+    transition:
+
+    var(--transition-normal);
+
+}
+
+
+
+.btn-primary:hover {
+
+
+    transform:
+
+    translateY(-5px);
+
+    box-shadow:
+
+    var(--orange-glow);
+
+}
+
+
+
+.btn-secondary {
+
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+
+    15px 35px;
+
+    border-radius:
+
+    var(--radius-pill);
+
+    border:
+
+    1px solid rgba(255,255,255,.25);
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    color:white;
+
+    backdrop-filter:
+
+    blur(15px);
+
+    transition:
+
+    var(--transition-normal);
+
+}
+
+
+
+.btn-secondary:hover {
+
+
+    border-color:
+
+    var(--saffron);
+
+    transform:
+
+    translateY(-5px);
+
+}
+
+
+
+/* =========================
+   HERO PRODUCT VISUAL
+========================= */
+
+
+.hero-visual {
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.hero-product {
+
+    position:relative;
+
+    width:
+
+    min(90% ,550px);
+
+    animation:
+
+    floating 6s infinite ease-in-out;
+
+    filter:
+
+    drop-shadow(
+    0 40px 60px rgba(0,0,0,.7)
+    );
+
+}
+
+
+
+.hero-glow {
+
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    background:
+
+    var(--saffron);
+
+    filter:
+
+    blur(120px);
+
+    opacity:.3;
+
+}
+
+
+
+/* =========================
+   FLOATING
+========================= */
+
+
+@keyframes floating {
+
+
+0%,
+100% {
+
+    transform:
+
+    translateY(0);
+
+}
+
+
+50% {
+
+    transform:
+
+    translateY(-25px);
+
+}
+
+
+}
+
+
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+
+
+.scroll-down {
+
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:
+
+    translateX(-50%);
+
+    z-index:3;
+
+}
+
+
+
+.scroll-down span {
+
+
+    display:block;
+
+    width:25px;
+
+    height:45px;
+
+    border:
+
+    2px solid rgba(255,255,255,.5);
+
+    border-radius:
+
+    20px;
+
+    position:relative;
+
+}
+
+
+
+.scroll-down span::after {
+
+
+    content:"";
+
+    position:absolute;
+
+    top:8px;
+
+    left:50%;
+
+    width:5px;
+
+    height:8px;
+
+    border-radius:10px;
+
+    background:
+
+    var(--saffron);
+
+    transform:
+
+    translateX(-50%);
+
+    animation:
+
+    scrollMove 1.8s infinite;
+
+
+}
+
+
+
+@keyframes scrollMove {
+
+
+0% {
+
+    transform:
+
+    translate(-50%,0);
+
+    opacity:1;
+
+}
+
+
+100% {
+
+    transform:
+
+    translate(-50%,20px);
+
+    opacity:0;
+
+}
+
+
+}
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+
+@media(max-width:900px){
+
+
+.hero-container {
+
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+
+}
+
+
+.hero-description {
+
+    margin-inline:auto;
+
+}
+
+
+.hero-buttons {
+
+    justify-content:center;
+
+}
+
+
+.hero-product {
+
+    width:70%;
+
+}
+
+
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+
+@media(max-width:600px){
+
+
+.hero {
+
+    min-height:900px;
+
+}
+
+
+.hero-title {
+
+    font-size:42px;
+
+}
+
+
+.hero-buttons {
+
+    flex-direction:column;
+
+}
+
+
+.hero-product {
+
+    width:90%;
+
+}
+
+
+}
