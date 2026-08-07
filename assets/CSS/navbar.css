@@ -1,0 +1,401 @@
+/* =====================================================
+   LIYAS ELECTRONICS
+   PREMIUM NAVBAR
+   Version: 1.0.0
+===================================================== */
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    z-index: var(--z-navbar);
+
+    transition: var(--transition-normal);
+
+}
+
+
+
+/* =========================
+   NAV CONTAINER
+========================= */
+
+.nav-container {
+
+    width: min(
+        92%,
+        var(--container-width)
+    );
+
+    margin: auto;
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    border-radius: var(--radius-pill);
+
+    background:
+
+    rgba(18,18,18,.55);
+
+    border:
+
+    1px solid rgba(
+        255,255,255,.12
+    );
+
+    backdrop-filter:
+
+    blur(20px);
+
+    -webkit-backdrop-filter:
+
+    blur(20px);
+
+}
+
+
+
+/* =========================
+   SCROLLED NAVBAR
+========================= */
+
+
+.navbar.scrolled .nav-container {
+
+    background:
+
+    rgba(10,10,10,.90);
+
+    box-shadow:
+
+    var(--shadow-soft);
+
+}
+
+
+
+/* =========================
+   LOGO
+========================= */
+
+
+.nav-logo {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+
+.nav-logo img {
+
+    width:120px;
+
+}
+
+
+
+.nav-logo span {
+
+    font-size:22px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    background:
+
+    var(--gradient-brand);
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+/* =========================
+   MENU
+========================= */
+
+
+.nav-menu {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+
+
+.nav-menu a {
+
+    position:relative;
+
+    color:
+
+    var(--white);
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+
+
+/* underline animation */
+
+
+.nav-menu a::after {
+
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-8px;
+
+    left:0;
+
+    width:0;
+
+    height:2px;
+
+    background:
+
+    var(--saffron);
+
+    transition:
+
+    .4s ease;
+
+
+}
+
+
+
+.nav-menu a:hover::after {
+
+    width:100%;
+
+}
+
+
+
+/* =========================
+   NAV BUTTON
+========================= */
+
+
+.nav-btn {
+
+    padding:
+
+    12px 25px;
+
+    border-radius:
+
+    var(--radius-pill);
+
+    background:
+
+    var(--gradient-brand);
+
+    color:
+
+    #000;
+
+    font-weight:700;
+
+    transition:
+
+    var(--transition-normal);
+
+}
+
+
+
+.nav-btn:hover {
+
+
+    transform:
+
+    translateY(-3px);
+
+    box-shadow:
+
+    var(--orange-glow);
+
+}
+
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+
+.menu-toggle {
+
+
+    display:none;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    gap:6px;
+
+
+}
+
+
+
+.menu-toggle span {
+
+
+    width:22px;
+
+    height:2px;
+
+    background:
+
+    var(--white);
+
+    transition:.3s;
+
+
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+
+@media(max-width:900px){
+
+
+.nav-container{
+
+    padding:0 15px;
+
+}
+
+
+.nav-menu {
+
+
+    position:fixed;
+
+    top:90px;
+
+    left:5%;
+
+    width:90%;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    flex-direction:column;
+
+    background:
+
+    rgba(18,18,18,.95);
+
+    backdrop-filter:blur(20px);
+
+    transform:
+
+    translateY(-30px);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.5s;
+
+}
+
+
+
+.nav-menu.active {
+
+
+    transform:
+
+    translateY(0);
+
+    opacity:1;
+
+    pointer-events:auto;
+
+
+}
+
+
+
+.menu-toggle {
+
+    display:flex;
+
+}
+
+
+
+.nav-btn {
+
+    display:none;
+
+}
+
+
+}
